@@ -1,10 +1,8 @@
-{# templates/blog/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}All articles{% endblock %}
-
+{% block title %}3 articles{% endblock %}
 {% block body %}
-    <h1>All articles from article s table : </h1>
+<h1>3 Articles</h1>
     {% for article in articles %}
         <div>
             <h2>{{ loop.index }} / {{ article.title }} - Category : {{ article.category.name }}</h2>
