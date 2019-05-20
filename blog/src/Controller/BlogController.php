@@ -81,20 +81,16 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("blog/category/{categoryName}", name="show_category")
+     * @Route("blog/category/{name}", name="show_category")
      * defaults={"categoryName" = null},
      * @return Response A response instance
      */
 
-    public function showByCategory(string $categoryName) : Response
+    public function showByCategory(Category $category) : Response
     {
-        if (!$categoryName) {
+        if (!$category) {
         throw $this->createNotFoundException('this category doesn\'nt exists.');
         }
-        $category = $this->getDoctrine()
-            ->getRepository(Category::class)
-            ->findOneBy(['name' => mb_strtolower($categoryName)]);
-
         $articles = $category->getArticles();
 
         return $this->render(
