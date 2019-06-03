@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary-color: lightcoral;
+
+body {
+    background-color: beige;
+}
+
+.navbar-style{
+    border-bottom: darkgray solid 2px;
+    a {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline $primary-color;
+            color: $primary-color;
+        }
+
+        &:visited {
+            color: $primary-color;
+        }
+    }
+}
+
+h1 {
+    font-family: Roboto cursive;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 3vw;
+}
+
+a {
+    color: $primary-color;
+
+    &:hover {
+        color: rosybrown;
+    }
+}
