@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TagController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>{{ tag.name }}</h1>
+    {% for article in articles %}
+    <p>{{ article.title }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
