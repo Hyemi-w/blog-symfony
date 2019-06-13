@@ -16,7 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="article_index", methods={"GET"})
+     * @param ArticleRepository , $articleRepository
+     * @Route("/show", name="article_index", methods={"GET"})
+     * @return Response
      */
     public function index(ArticleRepository $articleRepository): Response
     {
@@ -26,7 +28,9 @@ class ArticleController extends AbstractController
     }
 
     /**
+     * @param Request $request
      * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -62,7 +66,10 @@ class ArticleController extends AbstractController
     }
 
     /**
+     * @param Request $request
+     * @param Article $article
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @return Response
      */
     public function edit(Request $request, Article $article): Response
     {
@@ -84,7 +91,10 @@ class ArticleController extends AbstractController
     }
 
     /**
+     * @param Request $request
+     * @param Article $article
      * @Route("/{id}", name="article_delete", methods={"DELETE"})
+     * @return Response
      */
     public function delete(Request $request, Article $article): Response
     {
